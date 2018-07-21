@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h1>Rectangle Calculator</h1>
+        <h:form>
+            <table>
+                <tr>
+                    <td><h:outputLabel value="Length: "/></td>
+                    <td>
+                        <h:inputText value="#{rectangle.length}" validatorMessage="The length must be bigger than 0" >
+                            <f:validateDoubleRange minimum="1" />
+                        </h:inputText><br/>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td><h:outputLabel value="Width: "/></td>
+                    <td>
+                        <h:inputText value="#{rectangle.width}"  validatorMessage="The width must be bigger than 0">
+                            <f:validateDoubleRange minimum="1" />
+                        </h:inputText><br/>
+                    </td>
+                </tr>
+            </table>
+            <br/>
+            <h:commandButton value="Calculate" action="#{rectangle.calculator()}"/>
+        </h:form>
+
+        <p style="color: blue;">
+            <b>
+                <script>
+                    if (#{rectangle.area} != 0.0 &amp;&amp; #{rectangle.perimeter} != 0.0){
+                        document.write("Area: #{rectangle.area}. Perimeter: #{rectangle.perimeter} ");
+                    }
+
+                </script> 
+            </b>
+        </p>
+
+    </h:body>
+</html>
+

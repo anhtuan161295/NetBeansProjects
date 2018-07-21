@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Employee>
+	<age>23</age>
+	<name>Tam</name>
+	<gender>Male</gender>
+	<role>Java Developer</role>
+</Employee>

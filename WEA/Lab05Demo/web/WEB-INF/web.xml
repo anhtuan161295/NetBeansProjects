@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Development</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>FormHandlerServlet</servlet-name>
+        <servlet-class>lab05.FormHandlerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ForwardServlet</servlet-name>
+        <servlet-class>lab05.ForwardServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConfirmationServlet</servlet-name>
+        <servlet-class>lab05.ConfirmationServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginSES</servlet-name>
+        <servlet-class>lab05.LoginSES</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetSession</servlet-name>
+        <servlet-class>lab05.GetSession</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FormHandlerServlet</servlet-name>
+        <url-pattern>/FormHandlerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ForwardServlet</servlet-name>
+        <url-pattern>/ForwardServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConfirmationServlet</servlet-name>
+        <url-pattern>/ConfirmationServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginSES</servlet-name>
+        <url-pattern>/LoginSES</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetSession</servlet-name>
+        <url-pattern>/GetSession</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>faces/index.xhtml</welcome-file>
+    </welcome-file-list>
+</web-app>

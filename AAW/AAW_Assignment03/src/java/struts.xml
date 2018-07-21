@@ -1,0 +1,56 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <interceptors>
+            <interceptor name="loginInterceptor" class="fpt.interceptor.LoginInterceptor" />
+            <interceptor-stack name="loginStack" >
+                <interceptor-ref name="loginInterceptor" />
+                <interceptor-ref name="defaultStack" />
+            </interceptor-stack>
+        </interceptors>
+        <!--Login-->
+        <action name="Login" class="fpt.action.LoginAction" method="login" >
+            <result name="login">login.jsp</result>
+            <result name="success">listRedirect.jsp</result>
+        </action>
+        <!--Logout-->
+        <action name="Logout" class="fpt.action.LoginAction" method="logout" >
+            <result>login.jsp</result>
+        </action>
+        
+        <action name="InsertUser" class="fpt.action.AddUserAction">
+            <interceptor-ref name="loginStack" />
+            <result name="login">login.jsp</result>
+            <result name="success">listRedirect.jsp</result>
+            <result name="error">insertERROR.jsp</result>
+        </action>
+        <action name="ListUser" class="fpt.action.ListUserAction">
+            <interceptor-ref name="loginStack" />
+            <result name="login">login.jsp</result>
+            <result name="success">listUsers.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="GetUser" class="fpt.action.GetUserAction">
+            <interceptor-ref name="loginStack" />
+            <result name="login">login.jsp</result>
+            <result name="Update">update.jsp</result>
+            <result name="Delete">delete.jsp</result>
+        </action>
+        <action name="UpdateUser" class="fpt.action.UpdateUserAction">
+            <interceptor-ref name="loginStack" />
+            <result name="login">login.jsp</result>
+            <result name="success">listRedirect.jsp</result>
+            <result name="error">updateERROR.jsp</result>
+        </action>
+        <action name="DeleteUser" class="fpt.action.DeleteUserAction">
+            <interceptor-ref name="loginStack" />
+            <result name="login">login.jsp</result>
+            <result name="success">listRedirect.jsp</result>
+            <result name="error">deleteERROR.jsp</result>
+        </action>
+    </package>
+</struts>

@@ -1,0 +1,33 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="Login" class="www.fpt.action.LoginAction">
+            <result name="success">listRedirect.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="InsertUser" class="www.fpt.action.AddUserAction">
+            <result name="success">listRedirect.jsp</result>
+            <result name="error">insertERROR.jsp</result>
+        </action>
+        <action name="Display" class="www.fpt.action.GetAllUserAction">
+            <result name="success">listUsers.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+        <action name="GetUser" class="www.fpt.action.GetUserAction">
+            <result name="Update">update.jsp</result>
+            <result name="Delete">delete.jsp</result>
+        </action>
+        <action name="UpdateUser" class="www.fpt.action.UpdateUserAction">
+            <result name="success">listRedirect.jsp</result>
+            <result name="error">updateERROR.jsp</result>
+        </action>
+        <action name="DeleteUser" class="www.fpt.action.DeleteUserAction">
+            <result name="success">listRedirect.jsp</result>
+            <result name="error">deleteERROR.jsp</result>
+        </action>
+    </package>
+</struts>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<Employees>
+    <Employee id="E001">
+        <password>123456</password>
+        <name>Obama</name>
+        <age>29</age>
+        <gender>Male</gender>
+        <role>Java Developer</role>
+    </Employee>
+    <Employee id="E002">
+        <password>456789</password>
+        <name>Maria</name>
+        <age>19</age>
+        <gender>Female</gender>
+        <role>Manager</role>
+    </Employee>
+    <Employee id="E003">
+        <password>123123</password>
+        <name>Cantona</name>
+        <age>26</age>
+        <gender>Male</gender>
+        <role>Java Developer</role>
+    </Employee>
+</Employees>

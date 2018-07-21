@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h3>Hello ${userMB.user.username}, 
+            <h:form>
+                <h:commandLink value="Log out"  action="#{userMB.logout()}" />
+            </h:form>
+        </h3>
+        <h:link value="Display list" outcome="listUser" /> <br/> <br/>
+        <h:link value="Add new user" outcome="insert" /> <br/> <h1></h1>
+        <h:dataTable value="${userMB.listUsers()}" var="user"  >
+            <h:column>
+                <f:facet name="header">User name</f:facet>${user.username}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Full name</f:facet>${user.fullname}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Level</f:facet>${user.level}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Actions</f:facet>
+                <h:form>
+                    <h:commandLink value="Edit" action="${userMB.getUser(user.username,'update')}" /> |
+                    <h:commandLink value="Delete" action="listUser" 
+                                   actionListener="${userMB.deleteUser(user.username)}" 
+                                   onclick="return confirm('Are you sure to delete ?')" />
+                </h:form>
+            </h:column>
+        </h:dataTable>
+    </h:body>
+</html>
+

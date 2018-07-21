@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+    <managed-bean>
+        <managed-bean-name>userBean</managed-bean-name>
+        <managed-bean-class>lab08.UserBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <navigation-rule>
+        <display-name>AddUser</display-name>
+        <from-view-id>/AddUser.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/ListUser.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+   
+    <!--    <validator>
+        <validator-id>lab08.EmailValidator</validator-id>
+        <validator-class>lab08.EmailValidator</validator-class>
+    </validator>-->
+    <managed-bean>
+        <managed-bean-name>user</managed-bean-name>
+        <managed-bean-class>test.User</managed-bean-class>
+        <managed-bean-scope>none</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>userController</managed-bean-name>
+        <managed-bean-class>test.UserController</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        <managed-property>
+            <property-name>user</property-name>
+            <value>#{user}</value>
+        </managed-property>
+    </managed-bean>
+    <navigation-rule>
+        <from-view-id>/register.jsp</from-view-id>
+        <navigation-case>
+            <from-outcome>Welcome</from-outcome>
+            <to-view-id>/welcome.jsp</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <application>
+        <message-bundle>test.MyMessage</message-bundle>
+    </application>
+    
+</faces-config>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+--><Customers>
+    <Customer>
+        <ID> AA-11-22</ID>
+        <Password>123456</Password>
+        <Name>John</Name>
+        <Balance>3000</Balance>
+    </Customer>
+    <Customer>
+        <ID> AA-12-34</ID>
+        <Password>abcd</Password>
+        <Name>Bill</Name>
+        <Balance>5000</Balance>
+    </Customer>
+<Customer>
+        <ID>dssd</ID>
+        <Password>sds</Password>
+        <Name>sdds</Name>
+        <Balance>232</Balance>
+    </Customer>
+</Customers>

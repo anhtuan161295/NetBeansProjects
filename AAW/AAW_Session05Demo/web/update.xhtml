@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://java.sun.com/jsf/core" >
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h1>Edit User</h1>
+        <c:view>
+            <h:form>
+                <h:panelGrid columns="3" >
+                    <h:outputLabel value="User name" />
+                    <h:inputText value="#{userMB.userToUpdate.username}"
+                                 required="true" 
+                                 requiredMessage="User name is required."
+                                 id="username" />
+                    <h:message for="username" style="color: red" />
+                    <h:outputLabel value="Password" />
+                    <h:inputText value="#{userMB.userToUpdate.password}" 
+                                   required="true" 
+                                   requiredMessage="Password is required."
+                                   id="password" />
+                    <h:message for="password" style="color: red" />
+                    <h:outputLabel value="Full name" />
+                    <h:inputText value="#{userMB.userToUpdate.fullname}"
+                                 required="true" 
+                                 requiredMessage="Full name is required."
+                                 id="fullname" />
+                    <h:message for="fullname" style="color: red" />
+                    <h:outputLabel value="Level" />
+                    <h:inputText value="#{userMB.userToUpdate.level}" 
+                                 required="true" 
+                                 requiredMessage="Level is required."
+                                 validatorMessage="Level must be from 1 to 2"
+                                 id="level" >
+                        <c:validateLongRange minimum="1" maximum="2" />
+                    </h:inputText>
+                    <h:message for="level" style="color: red" />
+                    <h:commandButton value="Save" action="#{userMB.updateUser(userMB.userToUpdate)}" />
+                </h:panelGrid>
+            </h:form>
+            <br/>
+            <h:link value="Display list" outcome="listUser" />
+        </c:view>
+    </h:body>
+</html>
+

@@ -1,0 +1,35 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <interceptors>
+            <interceptor name="loginInterceptor" class="aptech.interceptor.LoginInterceptor" />
+            <interceptor-stack name="loginStack" >
+                <interceptor-ref name="loginInterceptor" />
+                <interceptor-ref name="defaultStack" />
+            </interceptor-stack>
+        </interceptors>
+        
+        <!-- Cau hinh cho login -->
+        <action name="loginUser" class="aptech.action.LoginAction" method="login" >
+            <result name="login" >login.jsp</result>
+            <result name="success" type="redirect" >homeAction</result>
+        </action>
+        
+        <!-- Cau hinh cho home.jsp -->
+        <action name="homeAction" class="aptech.action.LoginAction" method="home" >
+            <interceptor-ref name="loginStack" />
+            <result name="login" >login.jsp</result>
+            <result name="success">home.jsp</result>
+        </action>
+        
+         <!-- Cau hinh cho logout -->
+        <action name="logoutUser" class="aptech.action.LoginAction" method="logout" >
+            <result>login.jsp</result>
+        </action>
+        
+    </package>
+</struts>

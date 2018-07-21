@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<BookStore>
+    <Book code='111' >
+        <Title>Java Programming</Title>
+        <Price>200</Price>
+        <Author>Mr. Tom</Author>
+        <Edition>2</Edition>
+    </Book>
+    <Book code='112' >
+        <Title>C# Programming</Title>
+        <Price>300</Price>
+        <Author>Mr. Teo</Author>
+        <Edition>1</Edition>
+    </Book>
+    <Book code='113' >
+        <Title>Web Design</Title>
+        <Price>400</Price>
+        <Author>Angela</Author>
+        <Edition>3</Edition>
+    </Book>
+    <Book code='114' >
+        <Title>Game Development</Title>
+        <Price>500</Price>
+        <Author>Obama</Author>
+        <Edition>2</Edition>
+    </Book>
+</BookStore>

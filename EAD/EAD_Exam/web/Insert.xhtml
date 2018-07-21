@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h1>Add New Employee</h1>
+        <h:form>
+            <h:outputLabel value="EmployeeID" /><br/>
+            <h:inputText value="#{employeeMB.emp.employeeID}" required="true"
+                         requiredMessage="ID is required"            /><br/>
+            <h:outputLabel value="Password" /><br/>
+            <h:inputText value="#{employeeMB.emp.password}" required="true" 
+                         requiredMessage="Password is required"           /><br/>
+            <h:outputLabel value="Name" /><br/>
+            <h:inputText value="#{employeeMB.emp.name}" required="true" 
+                         requiredMessage="Name is required"      /><br/>
+            <h:outputLabel value="Age" /><br/>
+            <h:inputText value="#{employeeMB.emp.age}" required="true" 
+                         requiredMessage="Age is required" 
+                         validatorMessage="Age must be greater than 18"   >
+                <f:validateLongRange minimum="18"  />
+            </h:inputText><br/><br/>
+            <h:commandButton value="Add new" action="#{employeeMB.insert()}" />
+        </h:form>
+    </h:body>
+</html>
+

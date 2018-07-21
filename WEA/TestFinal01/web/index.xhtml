@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Hello from Facelets
+        <h:form>
+            <h:outputLabel value="Location: "/>
+            <h:inputText value="#{testManagedBean.location}" >
+                <f:validateRequired />
+                <f:validateRegex pattern="[a-zA-z0-9 ]+" />
+            </h:inputText><br/>
+            <h:outputLabel value="Fahrenheit: "/>
+            <h:inputText value="#{testManagedBean.fahrenheit}" >
+                <f:validateDoubleRange minimum="-20" maximum="120"/>
+            </h:inputText><br/>
+            <h:commandButton value="Submit" action="#{testManagedBean.changeDegree()}"/>
+        </h:form>
+
+        <script>
+
+            if (#{testManagedBean.celsius} != 0.0) {
+                document.write("<h1>The Celsius degree of #{testManagedBean.location} is #{testManagedBean.celsius} </h1>");
+            }
+
+        </script>
+
+    </h:body>
+</html>
+
